@@ -3,6 +3,30 @@
 // Desafio de Xadrez - MateCheck
 // Mariane de Oliveira Kronemberger
 
+//Void TORRE: Horizontal, Direita, 5 casas
+void moveTorre (int tower){
+    if (tower < 5){
+        printf("♖ - Direita\n");
+        moveTorre(tower + 1);
+    }
+}
+
+//Void BISPO: Diagonal, Cima à direita, 5 casas
+void moveBispo (int bishop){
+    if (bishop < 5){
+        printf("♗ - Cima, Direita\n");
+        moveBispo(bishop + 1);
+    }
+}
+
+//void RAINHA: Esquerda, 8 casas
+void moveRainha(int queen){
+    if (queen < 8){
+        printf("♕ - Esquerda\n");
+        moveRainha (queen + 1);
+}
+}
+
 int main() {
 
     //Variáveis
@@ -17,9 +41,7 @@ int main() {
 
     //TORRE: Horizontal, Direita, 5 casas
     printf("Movimentando: TORRE\n");
-    for (torre; torre < 5; torre++){
-        printf("♖ - Direita\n");
-    }
+    moveTorre(torre);
 
     printf("\nDigite C para Continuar: \n --->");
     scanf(" %c", &tecla);
@@ -27,28 +49,22 @@ int main() {
 
     //BISPO: Diagonal, Cima à direita, 5 casas
     printf("Movimentando: BISPO\n");
-    while (bispo < 5){
-        printf("♗ - Cima, Direita\n");
-        bispo++;
-    }
-
+    moveBispo(bispo);
+    
     printf("\nDigite C para Continuar: \n --->");
     scanf(" %c", &tecla);
     printf(" \n");
 
     //RAINHA: Esquerda, 8 casas
     printf("Movimentando: RAINHA\n");
-    do {
-        printf("♕ - Esquerda\n");
-        rainha++;
-    } while (rainha < 8);
+    moveRainha(rainha);
 
     printf("\nDigite C para Continuar: \n --->");
     scanf(" %c", &tecla);
     printf(" \n");
 
     //CAVALO: L pequeno, 2 Casas baixo, 1 Esquerda
-    //Loop aninhado (for e while)
+    //Loop complexo (for e while)
     printf("Movimentando: CAVALO\n");
     for(cavalo1 = 1; cavalo1 <= 2; cavalo1++){ //Loop externo
         printf("♘ - Baixo\n");
