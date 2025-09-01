@@ -7,13 +7,13 @@ int main() {
 
     //Variáveis
 
-    int bispo = 0, torre = 0, rainha = 0;
+    int bispo = 0, torre = 0, rainha = 0, cavalo1, cavalo2 = 0; //Atribuição de cavalo1 = 0 acontece no loop
     char tecla;
 
     //Início do código
 
     printf ("-*-*-*- Xadrez MateCheck -*-*-*-*\n");
-    printf(" \n");
+    printf("\n");
 
     //TORRE: Horizontal, Direita, 5 casas
     printf("Movimentando: TORRE\n");
@@ -43,10 +43,28 @@ int main() {
         rainha++;
     } while (rainha < 8);
 
-    printf("\nDigite C para Encerrar: \n --->");
+    printf("\nDigite C para Continuar: \n --->");
     scanf(" %c", &tecla);
     printf(" \n");
 
+    //CAVALO: L pequeno, 2 Casas baixo, 1 Esquerda
+    //Loop aninhado (for e while)
+    printf("Movimentando: CAVALO\n");
+    for(cavalo1 = 1; cavalo1 <= 2; cavalo1++){ //Loop externo
+        printf("♘ - Baixo\n");
+
+        if(cavalo1 == 2){
+            while(cavalo2 < 1){ //Loop interno
+                printf("♘ - Esquerda\n");
+                cavalo2++;
+            }
+        }
+    }
+
+    printf("\nDigite C para Encerrar: \n --->");
+    scanf(" %c", &tecla);
+    printf(" \n");
+    
     return 0;
 }
 
