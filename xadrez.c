@@ -19,11 +19,11 @@ void moveBispo (int bishop){
 
     //Loop externo: Cima
     for (int i = 0; i < 1; i++) {
-        printf("♗ - Cima,");
+        printf("♗ - Cima\n");
 
         //Loop interno: Direita
         for (int j = 0; j < 1; j++) {
-            printf(" Direita\n");
+            printf("♗ - Direita\n");
         }
     }
     //Chamada recursiva para o próximo passo
