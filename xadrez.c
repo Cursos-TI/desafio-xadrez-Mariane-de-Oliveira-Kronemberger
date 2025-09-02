@@ -7,13 +7,13 @@
 void moveTorre (int tower){
     if (tower < 5){
         printf("♖ - Direita\n");
+        //Chamada recursiva para o próximo passo
         moveTorre(tower + 1);
     }
 }
 
 //Void BISPO: Diagonal, Cima à direita, 5 casas
 //Loop aninhado Externo (cima) e Interno (direita)
-
 void moveBispo (int bishop){
     if (bishop < 5) {// condição de parada
 
@@ -35,6 +35,7 @@ void moveBispo (int bishop){
 void moveRainha(int queen){
     if (queen < 8){
         printf("♕ - Esquerda\n");
+        //Chamada recursiva para o próximo passo
         moveRainha (queen + 1);
     }
 }
