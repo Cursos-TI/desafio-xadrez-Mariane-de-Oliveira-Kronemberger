@@ -12,11 +12,23 @@ void moveTorre (int tower){
 }
 
 //Void BISPO: Diagonal, Cima à direita, 5 casas
+//Loop aninhado Externo (cima) e Interno (direita)
+
 void moveBispo (int bishop){
-    if (bishop < 5){
-        printf("♗ - Cima, Direita\n");
-        moveBispo(bishop + 1);
+    if (bishop < 5) {// condição de parada
+
+    //Loop externo: Cima
+    for (int i = 0; i < 1; i++) {
+        printf("♗ - Cima,");
+
+        //Loop interno: Direita
+        for (int j = 0; j < 1; j++) {
+            printf(" Direita\n");
+        }
     }
+    //Chamada recursiva para o próximo passo
+    moveBispo(bishop + 1);
+ }    
 }
 
 //void RAINHA: Esquerda, 8 casas
@@ -24,7 +36,7 @@ void moveRainha(int queen){
     if (queen < 8){
         printf("♕ - Esquerda\n");
         moveRainha (queen + 1);
-}
+    }
 }
 
 int main() {
@@ -63,16 +75,17 @@ int main() {
     scanf(" %c", &tecla);
     printf(" \n");
 
-    //CAVALO: L pequeno, 2 Casas baixo, 1 Esquerda
+    //CAVALO: L pequeno, 2 Casas cima, 1 Direita
     //Loop complexo (for e while)
     printf("Movimentando: CAVALO\n");
-    for(cavalo1 = 1; cavalo1 <= 2; cavalo1++){ //Loop externo
-        printf("♘ - Baixo\n");
+    for(cavalo1 = 1; cavalo1 <= 2; cavalo1++){ //Loop FOR externo
+        printf("♘ - Cima\n");
 
         if(cavalo1 == 2){
-            while(cavalo2 < 1){ //Loop interno
-                printf("♘ - Esquerda\n");
-                cavalo2++;
+            while(cavalo2 < 1){ //Loop WHILE interno
+                printf("♘ - Direita\n");
+                cavalo2++; //Incremento anti loop infinito
+                break;; //Utilização do break
             }
         }
     }
@@ -83,15 +96,3 @@ int main() {
     
     return 0;
 }
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
-
